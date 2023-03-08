@@ -1,0 +1,15 @@
+<h1>Displaying <%= @restaurant[:name] %></h1>
+<ul>
+<li><%= @restaurant[:address] %></li>
+<li><%= @restaurant[:phone_number] %></li>
+<li><%= @restaurant[:category] %></li>
+</ul>
+<h2>Reviews</h2>
+<ul>
+<% @reviews.each do |review| %>
+<li><%=review.content  %></li>
+<% end %>
+</ul>
+<h2><%= link_to "Return to Restaurant List", restaurants_path %></h2>
+<h2><%= link_to "Edit Restaurant", edit_restaurant_path %></h2>
+<h2><%= link_to "Add Review",  new_restaurant_review_path(@restaurant) %></h2>
